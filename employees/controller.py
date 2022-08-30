@@ -83,6 +83,7 @@ async def register_employees(employeess: model.EmployeesCreate):
             names=employeess.names, 
             bio= employeess.bio,
             phone= employeess.phone,
+            TypeChoosen=employees.TypeChoosen,
 
             address= employeess.address,
 
@@ -114,6 +115,7 @@ async def update_employees(Empl: model.EmployeesUpdate, currentUser: model.Emplo
         names=Empl.names, 
         bio= Empl.bio,
         phone= Empl.phone,
+        TypeChoosen=Empl.TypeChoosen,
 
         address= Empl.address,
 

@@ -6,6 +6,7 @@ class EmployeesCreate(BaseModel):
     names:str =  Field(..., example="Names")
     bio: str = Field(..., example="bio")
     phone: str = Field(..., example="phone")
+    TypeChoosen:str = Field(..., example="type")
 
     address: str = Field(..., example="address")
 
@@ -17,6 +18,7 @@ class EmployeesList(BaseModel):
     names:str 
     bio: str
     phone: str
+    TypeChoosen:str
     address: str
     
     status: str
@@ -30,6 +32,7 @@ class EmployeesUpdate(BaseModel):
     names:str 
     bio: str
     phone: str
+    TypeChoosen:str
     address: str
     
     status: str

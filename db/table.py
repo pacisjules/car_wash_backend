@@ -260,6 +260,7 @@ employees  = sqlalchemy.Table(
     sqlalchemy.Column("bio"    , sqlalchemy.String),
     sqlalchemy.Column("phone"  , sqlalchemy.String),
     sqlalchemy.Column("address"    , sqlalchemy.String),
+    sqlalchemy.Column("TypeChoosen"    , sqlalchemy.String),
 
     sqlalchemy.Column("status"    , sqlalchemy.String),
     sqlalchemy.Column("created_at", sqlalchemy.String),
