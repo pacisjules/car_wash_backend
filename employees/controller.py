@@ -83,7 +83,7 @@ async def register_employees(employeess: model.EmployeesCreate):
             names=employeess.names, 
             bio= employeess.bio,
             phone= employeess.phone,
-            TypeChoosen=employees.TypeChoosen,
+            TypeChoosen=employeess.TypeChoosen,
 
             address= employeess.address,
 
