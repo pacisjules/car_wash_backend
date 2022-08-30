@@ -42,37 +42,6 @@ async def find_employees_by_id(employees_id: str, currentUser: model.EmployeesLi
     return await database.fetch_one(query)
 
 
-#Find one employees by identity number
-@router.get("/employees/{identity}", response_model=model.EmployeesList)
-async def find_employees_by_identity(identity: str, currentUser: model.EmployeesList = Depends(util.get_current_active_user)):
-    query = employees.select().where(employees.c.identity_number == identity)
-    return await database.fetch_one(query)
-
-
-#Find one employees by TIN NUMBER
-@router.get("/employees/tin/{tin_number}", response_model=model.EmployeesList)
-async def find_employees_by_tin_number(tin_number: str, currentUser: model.EmployeesList = Depends(util.get_current_active_user)):
-    query = employees.select().where(employees.c.tin == tin_number)
-    return await database.fetch_one(query)
-
-
-
-# Find employeess by province
-@router.get("/all_employeess_by_province/{province}", response_model=Page[model.EmployeesList])
-async def find_employeess_by_province(province: str, currentUser: model.EmployeesList = Depends(util.get_current_active_user)):
-    query = employees.select().where(employees.c.province == province)
-    res = await database.fetch_all(query)
-    return paginate(res)
-
-
-# Find employeess by district
-@router.get("/all_employeess_by_district/{district}", response_model=Page[model.EmployeesList])
-async def find_employeess_by_district(district: str, currentUser: model.EmployeesList = Depends(util.get_current_active_user)):
-    query = employees.select().where(employees.c.district == district)
-    res = await database.fetch_all(query)
-    return paginate(res)
-
-
 # Find employeess by phone
 @router.get("/find_employees_by_phone/{phone}", response_model=Page[model.EmployeesList])
 async def find_employeess_by_phone(phone: str, currentUser: model.EmployeesList = Depends(util.get_current_active_user)):
