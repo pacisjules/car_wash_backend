@@ -249,3 +249,21 @@ account_keys  = sqlalchemy.Table(
 )
 
 
+#14 Table Customers
+employees  = sqlalchemy.Table(
+    "employees",
+    metadata,
+    sqlalchemy.Column("id"        , sqlalchemy.String , primary_key=True),
+    sqlalchemy.Column("user_id", sqlalchemy.String, ForeignKey(users.c.id), nullable=False),
+    sqlalchemy.Column("names"  , sqlalchemy.String),
+
+    sqlalchemy.Column("bio"    , sqlalchemy.String),
+    sqlalchemy.Column("phone"  , sqlalchemy.String),
+    sqlalchemy.Column("address"    , sqlalchemy.String),
+
+    sqlalchemy.Column("status"    , sqlalchemy.String),
+    sqlalchemy.Column("created_at", sqlalchemy.String),
+    sqlalchemy.Column("last_update_at", sqlalchemy.String),
+)
+
+
