@@ -73,6 +73,7 @@ async def shutdown():
 from auth import controller as authController
 from users import controller as userController
 from customer import controller as customerController
+from employees import controller as employeesController
 
 from Garage_Settings import controller as garageController
 from Vehicle_Type import controller as vehicletypeController
@@ -90,6 +91,7 @@ app.include_router(userController.router, tags=["Users"])
 app.include_router(garageController.router, tags=["Settings"])
 
 #Application Parts
+app.include_router(employeesController.router, tags=["Employees"])
 app.include_router(customerController.router, tags=["Customers"])
 app.include_router(vehicletypeController.router, tags=["Vehicle Type"])
 app.include_router(vehicleController.router, tags=["Vehicle"])
